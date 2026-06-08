@@ -23,11 +23,41 @@ export const styles = StyleSheet.create({
     lineHeight: 22,
   },
   productList: {
-    paddingHorizontal: 20,
-    paddingBottom: 24,
+    paddingHorizontal: 16,
+    paddingBottom: 16,
+  },
+  columnWrapper: {
+    justifyContent: 'space-between',
   },
   separator: {
     height: 16,
+  },
+  pagination: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 16,
+  },
+  paginationButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 18,
+    borderRadius: 14,
+    backgroundColor: COLORS.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minWidth: 96,
+  },
+  paginationButtonText: {
+    color: '#fff',
+    fontWeight: '700',
+  },
+  paginationLabel: {
+    color: COLORS.textSecondary,
+    fontWeight: '700',
+    marginHorizontal: 14,
+  },
+  disabledButton: {
+    opacity: 0.4,
   },
   loadingContainer: {
     flex: 1,

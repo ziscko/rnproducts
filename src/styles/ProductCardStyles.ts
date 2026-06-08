@@ -2,9 +2,16 @@ import { StyleSheet } from 'react-native';
 import { COLORS } from './theme';
 
 export const styles = StyleSheet.create({
+  cardTouchable: {
+    flex: 1,
+    minWidth: 0,
+    marginHorizontal: 8,
+    marginBottom: 16,
+  },
   card: {
+    flex: 1,
     borderRadius: 22,
-    padding: 18,
+    padding: 8,
     backgroundColor: COLORS.surface,
     shadowColor: '#000',
     shadowOpacity: 0.08,
@@ -13,8 +20,8 @@ export const styles = StyleSheet.create({
     elevation: 3,
   },
   imageWrapper: {
-    width: 64,
-    height: 64,
+    width: 'auto',
+    height: 150,
     borderRadius: 18,
     backgroundColor: COLORS.surface,
     alignItems: 'center',
@@ -47,7 +54,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   price: {
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: '700',
     color: COLORS.text,
   },
