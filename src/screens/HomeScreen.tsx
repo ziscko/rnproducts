@@ -15,10 +15,17 @@ import { useProducts } from '../hooks/useProducts';
 import { styles } from '../styles/HomeScreenStyles';
 import type { Product } from '../types/product';
 
-export function HomeScreen() {
+type ProductState = ReturnType<typeof useProducts>;
+
+interface HomeScreenProps {
+  initialProductState?: ProductState;
+}
+
+export function HomeScreen({ initialProductState }: HomeScreenProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const fallback = useProducts();
   const { products, page, setPage, loading, error, hasMore, refresh } =
-    useProducts();
+    initialProductState ?? fallback;
 
   if (selectedProduct) {
     return (
