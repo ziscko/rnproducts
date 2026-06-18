@@ -19,17 +19,17 @@ export function ProductCard({ product, onPress }: Props) {
       <View style={styles.card}>
         <View style={styles.imageWrapper}>
           <Image source={{ uri: product.images[0] }} style={styles.image} />
-        </View>
-
-        <View style={styles.details}>
-          <Text style={styles.name}>{product.title}</Text>
-        </View>
-
-        <View style={styles.footer}>
-          <Text style={styles.price}>${product.price}</Text>
-          <TouchableOpacity style={styles.actionButton} activeOpacity={0.8}>
-            <MaterialIcons name="add-shopping-cart" size={18} color="#fff" />
+          <TouchableOpacity style={styles.favoriteButton} activeOpacity={0.7}>
+            <MaterialIcons name="favorite-border" size={20} color="#111" />
           </TouchableOpacity>
+        </View>
+
+        <View style={styles.info}>
+          <Text style={styles.name} numberOfLines={2}>
+            {product.title}
+          </Text>
+          <Text style={styles.category}>{product.category.name}</Text>
+          <Text style={styles.price}>US${product.price}</Text>
         </View>
       </View>
     </TouchableOpacity>

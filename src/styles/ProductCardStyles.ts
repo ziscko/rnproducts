@@ -1,69 +1,57 @@
 import { StyleSheet } from 'react-native';
-import { COLORS } from './theme';
 
 export const styles = StyleSheet.create({
   cardTouchable: {
     flex: 1,
     minWidth: 0,
-    marginHorizontal: 8,
-    marginBottom: 16,
+    marginHorizontal: 4,
+    marginBottom: 20,
   },
   card: {
-    flex: 1,
-    borderRadius: 22,
-    padding: 8,
-    backgroundColor: COLORS.surface,
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: 8 },
-    elevation: 3,
+    backgroundColor: '#ffffff',
   },
   imageWrapper: {
-    width: 'auto',
-    height: 150,
-    borderRadius: 18,
-    backgroundColor: COLORS.surface,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: '100%',
+    aspectRatio: 0.85,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 4,
     overflow: 'hidden',
-    marginBottom: 14,
+    position: 'relative',
   },
   image: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
   },
-  details: {
-    marginBottom: 16,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: COLORS.text,
-    marginBottom: 4,
-  },
-  subtitle: {
-    fontSize: 14,
-    color: '#4b5563',
-    lineHeight: 20,
-  },
-  footer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  price: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: COLORS.text,
-  },
-  actionButton: {
-    width: 42,
-    height: 42,
-    borderRadius: 14,
-    backgroundColor: COLORS.primary,
+  favoriteButton: {
+    position: 'absolute',
+    top: 8,
+    right: 8,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: 'rgba(255,255,255,0.9)',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  info: {
+    paddingTop: 10,
+    paddingBottom: 4,
+  },
+  name: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#111111',
+    marginBottom: 2,
+  },
+  category: {
+    fontSize: 13,
+    color: '#6b7280',
+    marginBottom: 4,
+  },
+  price: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#111111',
   },
 });

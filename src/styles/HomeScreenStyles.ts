@@ -23,14 +23,15 @@ export const styles = StyleSheet.create({
     lineHeight: 22,
   },
   productList: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 12,
     paddingBottom: 16,
+    paddingTop: 8,
   },
   columnWrapper: {
     justifyContent: 'space-between',
   },
   separator: {
-    height: 16,
+    height: 0,
   },
   pagination: {
     flexDirection: 'row',

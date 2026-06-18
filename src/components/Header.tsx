@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { styles } from '../styles/HeaderStyles';
+
+const logo = require('../assets/pacoshop-logo-black.png');
 
 export function Header() {
   return (
@@ -11,8 +13,7 @@ export function Header() {
       </TouchableOpacity>
 
       <View style={styles.brandContainer}>
-        <MaterialIcons name="storefront" size={24} color="#2f6ce5" />
-        <Text style={styles.brandText}>Store</Text>
+        <Image source={logo} style={styles.logo} resizeMode="contain" />
       </View>
 
       <TouchableOpacity style={styles.iconButton} activeOpacity={0.7}>

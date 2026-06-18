@@ -7,9 +7,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingTop: 16,
-    paddingBottom: 12,
-    marginBottom: 14,
+    paddingTop: 8,
+    paddingBottom: 8,
     backgroundColor: COLORS.surface,
     borderBottomWidth: 1,
     borderBottomColor: '#e5e7eb',
@@ -24,10 +23,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  brandText: {
-    marginLeft: 8,
-    fontSize: 18,
-    fontWeight: '700',
-    color: COLORS.text,
+  logo: {
+    width: 96,
+    height: 24,
   },
 });
