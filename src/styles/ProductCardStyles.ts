@@ -54,4 +54,18 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#111111',
   },
+  priceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  cartButton: {
+    padding: 4,
+  },
+  cartIcon: {
+    color: '#9ca3af',
+  },
+  cartIconActive: {
+    color: '#111111',
+  },
 })

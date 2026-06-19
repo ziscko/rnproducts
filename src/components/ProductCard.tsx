@@ -1,8 +1,8 @@
-import React from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import React, { useState } from 'react'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import type { Product } from '../types/product'
 import { styles } from '../styles/ProductCardStyles'
+import type { Product } from '../types/product'
 
 type Props = {
   product: Product
@@ -10,6 +10,8 @@ type Props = {
 }
 
 export function ProductCard({ product, onPress }: Props) {
+  const [inCart, setInCart] = useState(false)
+
   return (
     <TouchableOpacity
       style={styles.cardTouchable}
@@ -29,7 +31,20 @@ export function ProductCard({ product, onPress }: Props) {
             {product.title}
           </Text>
           <Text style={styles.category}>{product.category.name}</Text>
-          <Text style={styles.price}>US${product.price}</Text>
+          <View style={styles.priceRow}>
+            <Text style={styles.price}>US${product.price}</Text>
+            <TouchableOpacity
+              style={styles.cartButton}
+              activeOpacity={0.75}
+              onPress={() => setInCart(!inCart)}
+            >
+              <MaterialIcons
+                name={inCart ? 'shopping-cart' : 'add-shopping-cart'}
+                size={14}
+                style={inCart ? styles.cartIconActive : styles.cartIcon}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </TouchableOpacity>
