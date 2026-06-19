@@ -1,13 +1,13 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import type { Product } from '../types/product';
-import { styles } from '../styles/ProductCardStyles';
+import React from 'react'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import type { Product } from '../types/product'
+import { styles } from '../styles/ProductCardStyles'
 
 type Props = {
-  product: Product;
-  onPress?: () => void;
-};
+  product: Product
+  onPress?: () => void
+}
 
 export function ProductCard({ product, onPress }: Props) {
   return (
@@ -33,5 +33,5 @@ export function ProductCard({ product, onPress }: Props) {
         </View>
       </View>
     </TouchableOpacity>
-  );
+  )
 }

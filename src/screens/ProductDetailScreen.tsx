@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
   View,
   Text,
@@ -6,21 +6,21 @@ import {
   Image,
   TouchableOpacity,
   useWindowDimensions,
-} from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import type { Product } from '../types/product';
-import { SafeAreaView } from 'react-native-safe-area-context';
+} from 'react-native'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import type { Product } from '../types/product'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { styles } from '../styles/ProductDetailStyles';
+import { styles } from '../styles/ProductDetailStyles'
 
 type Props = {
-  product: Product;
-  onBack: () => void;
-};
+  product: Product
+  onBack: () => void
+}
 
 export function ProductDetailScreen({ product, onBack }: Props) {
-  const { width } = useWindowDimensions();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { width } = useWindowDimensions()
+  const [activeIndex, setActiveIndex] = useState(0)
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -41,8 +41,8 @@ export function ProductDetailScreen({ product, onBack }: Props) {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
           onMomentumScrollEnd={event => {
-            const index = Math.round(event.nativeEvent.contentOffset.x / width);
-            setActiveIndex(index);
+            const index = Math.round(event.nativeEvent.contentOffset.x / width)
+            setActiveIndex(index)
           }}
           style={styles.imageCarousel}
         >
@@ -71,5 +71,5 @@ export function ProductDetailScreen({ product, onBack }: Props) {
         </View>
       </ScrollView>
     </SafeAreaView>
-  );
+  )
 }

@@ -1,9 +1,8 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { styles } from '../styles/HeaderStyles';
-
-const logo = require('../assets/pacoshop-logo-black.png');
+import React from 'react'
+import { Image, TouchableOpacity, View } from 'react-native'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import logo from '../assets/pacoshop-logo-black.png'
+import { styles } from '../styles/HeaderStyles'
 
 export function Header() {
   return (
@@ -20,5 +19,5 @@ export function Header() {
         <MaterialIcons name="account-circle" size={28} color="#111" />
       </TouchableOpacity>
     </View>
-  );
+  )
 }

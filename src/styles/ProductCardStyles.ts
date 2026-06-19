@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   cardTouchable: {
@@ -54,4 +54,4 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#111111',
   },
-});
+})

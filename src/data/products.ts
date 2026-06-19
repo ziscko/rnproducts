@@ -1,4 +1,4 @@
-import type { Product } from '../types/product';
+import type { Product } from '../types/product'
 
 export const products: Product[] = [
   {
@@ -43,4 +43,4 @@ export const products: Product[] = [
     creationAt: '2026-06-06T20:40:27.000Z',
     updatedAt: '2026-06-06T20:40:27.000Z',
   },
-];
+]

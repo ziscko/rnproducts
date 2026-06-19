@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { COLORS } from './theme';
+import { StyleSheet } from 'react-native'
+import { COLORS } from './theme'
 
 export const styles = StyleSheet.create({
   safeArea: {
@@ -76,4 +76,4 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
   },
-});
+})

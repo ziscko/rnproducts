@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
   View,
   FlatList,
@@ -6,26 +6,26 @@ import {
   ActivityIndicator,
   RefreshControl,
   TouchableOpacity,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Header } from '../components/Header';
-import { ProductCard } from '../components/ProductCard';
-import { ProductDetailScreen } from './ProductDetailScreen';
-import { useProducts } from '../hooks/useProducts';
-import { styles } from '../styles/HomeScreenStyles';
-import type { Product } from '../types/product';
+} from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { Header } from '../components/Header'
+import { ProductCard } from '../components/ProductCard'
+import { ProductDetailScreen } from './ProductDetailScreen'
+import { useProducts } from '../hooks/useProducts'
+import { styles } from '../styles/HomeScreenStyles'
+import type { Product } from '../types/product'
 
-type ProductState = ReturnType<typeof useProducts>;
+type ProductState = ReturnType<typeof useProducts>
 
 interface HomeScreenProps {
-  initialProductState?: ProductState;
+  initialProductState?: ProductState
 }
 
 export function HomeScreen({ initialProductState }: HomeScreenProps) {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const fallback = useProducts();
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const fallback = useProducts()
   const { products, page, setPage, loading, error, hasMore, refresh } =
-    initialProductState ?? fallback;
+    initialProductState ?? fallback
 
   if (selectedProduct) {
     return (
@@ -33,7 +33,7 @@ export function HomeScreen({ initialProductState }: HomeScreenProps) {
         product={selectedProduct}
         onBack={() => setSelectedProduct(null)}
       />
-    );
+    )
   }
 
   return (
@@ -94,5 +94,5 @@ export function HomeScreen({ initialProductState }: HomeScreenProps) {
         />
       )}
     </SafeAreaView>
-  );
+  )
 }
