@@ -4,34 +4,28 @@ import { COLORS } from './theme'
 export const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: COLORS.surface,
   },
-  hero: {
-    paddingHorizontal: 20,
-    paddingTop: 24,
-    paddingBottom: 14,
+  titleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingTop: 12,
+    paddingBottom: 12,
   },
-  title: {
-    fontSize: 28,
-    fontWeight: '800',
-    color: COLORS.text,
-    marginBottom: 6,
-  },
-  subtitle: {
-    fontSize: 15,
-    color: COLORS.textSecondary,
-    lineHeight: 22,
+  shopTitle: {
+    fontSize: 30,
+    fontWeight: '600',
+    color: '#111111',
   },
   productList: {
     paddingHorizontal: 12,
     paddingBottom: 16,
-    paddingTop: 8,
+    paddingTop: 16,
   },
   columnWrapper: {
     justifyContent: 'space-between',
-  },
-  separator: {
-    height: 0,
   },
   pagination: {
     flexDirection: 'row',
@@ -43,7 +37,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 18,
     borderRadius: 14,
-    backgroundColor: COLORS.primary,
+    backgroundColor: '#111111',
     alignItems: 'center',
     justifyContent: 'center',
     minWidth: 96,
@@ -53,12 +47,12 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
   },
   paginationLabel: {
-    color: COLORS.textSecondary,
+    color: '#6b7280',
     fontWeight: '700',
     marginHorizontal: 14,
   },
   disabledButton: {
-    opacity: 0.4,
+    opacity: 0.3,
   },
   loadingContainer: {
     flex: 1,

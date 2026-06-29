@@ -28,9 +28,10 @@ export const styles = StyleSheet.create({
     elevation: 2,
   },
   screenTitle: {
-    fontSize: 22,
-    fontWeight: '800',
+    fontSize: 20,
+    fontWeight: '600',
     color: COLORS.text,
+    width: '80%',
   },
   imageCarousel: {
     marginTop: 8,

@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import {
-  View,
-  Text,
-  ScrollView,
   Image,
+  ScrollView,
+  Text,
   TouchableOpacity,
   useWindowDimensions,
+  View,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import type { Product } from '../types/product'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { styles } from '../styles/ProductDetailStyles'
 
@@ -33,7 +33,7 @@ export function ProductDetailScreen({ product, onBack }: Props) {
           >
             <MaterialIcons name="arrow-back" size={26} color="#111" />
           </TouchableOpacity>
-          <Text style={styles.screenTitle}>Product</Text>
+          <Text style={styles.screenTitle}>{product.title}</Text>
         </View>
 
         <ScrollView
@@ -65,7 +65,6 @@ export function ProductDetailScreen({ product, onBack }: Props) {
         </View>
 
         <View style={styles.detailsContainer}>
-          <Text style={styles.title}>{product.title}</Text>
           <Text style={styles.price}>${product.price}</Text>
           <Text style={styles.description}>{product.description}</Text>
         </View>

@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import {
-  View,
-  FlatList,
-  Text,
   ActivityIndicator,
+  FlatList,
   RefreshControl,
+  Text,
   TouchableOpacity,
+  View,
 } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Header } from '../components/Header'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import { BottomTabBar } from '../components/BottomTabBar'
+import { CategoryTabs } from '../components/CategoryTabs'
 import { ProductCard } from '../components/ProductCard'
-import { ProductDetailScreen } from './ProductDetailScreen'
+import { useCategories } from '../hooks/useCategories'
 import { useProducts } from '../hooks/useProducts'
 import { styles } from '../styles/HomeScreenStyles'
 import type { Product } from '../types/product'
+import { ProductDetailScreen } from './ProductDetailScreen'
 
 type ProductState = ReturnType<typeof useProducts>
 
@@ -23,9 +26,17 @@ interface HomeScreenProps {
 
 export function HomeScreen({ initialProductState }: HomeScreenProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null)
+  const [activeTab, setActiveTab] = useState('shop')
+
   const fallback = useProducts()
   const { products, page, setPage, loading, error, hasMore, refresh } =
     initialProductState ?? fallback
+  const { categories } = useCategories()
+
+  const filteredProducts = selectedCategory
+    ? products.filter(p => p.category.id === selectedCategory)
+    : products
 
   if (selectedProduct) {
     return (
@@ -37,11 +48,26 @@ export function HomeScreen({ initialProductState }: HomeScreenProps) {
   }
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <Header />
+    <SafeAreaView style={styles.safeArea} edges={['top']}>
+      {/* Title + search */}
+      <View style={styles.titleRow}>
+        <Text style={styles.shopTitle}>Shop</Text>
+        <TouchableOpacity activeOpacity={0.7}>
+          <MaterialIcons name="search" size={26} color="#111" />
+        </TouchableOpacity>
+      </View>
+
+      {/* Category tabs */}
+      <CategoryTabs
+        categories={categories}
+        selectedId={selectedCategory}
+        onSelect={setSelectedCategory}
+      />
+
+      {/* Product list */}
       {loading ? (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#2f6ce5" />
+          <ActivityIndicator size="large" color="#111" />
         </View>
       ) : error ? (
         <View style={styles.errorContainer}>
@@ -49,7 +75,7 @@ export function HomeScreen({ initialProductState }: HomeScreenProps) {
         </View>
       ) : (
         <FlatList
-          data={products}
+          data={filteredProducts}
           keyExtractor={item => item.id.toString()}
           numColumns={2}
           columnWrapperStyle={styles.columnWrapper}
@@ -60,7 +86,6 @@ export function HomeScreen({ initialProductState }: HomeScreenProps) {
               onPress={() => setSelectedProduct(item)}
             />
           )}
-          ItemSeparatorComponent={() => <View style={styles.separator} />}
           ListFooterComponent={
             <View style={styles.pagination}>
               <TouchableOpacity
@@ -93,6 +118,9 @@ export function HomeScreen({ initialProductState }: HomeScreenProps) {
           }
         />
       )}
+
+      {/* Bottom Tab Bar */}
+      <BottomTabBar activeTab={activeTab} onTabPress={setActiveTab} />
     </SafeAreaView>
   )
 }
