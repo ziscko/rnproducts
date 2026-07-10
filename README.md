@@ -1,5 +1,7 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+<img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-07-09 at 18 47 35" src="https://github.com/user-attachments/assets/22d9495f-ba09-4e93-a8bb-6dc6f4f7e887" />
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
